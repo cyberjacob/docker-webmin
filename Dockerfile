@@ -18,6 +18,8 @@ ENV atboot     0
 
 RUN apk update && apk add perl tar && rm -r /var/cache/
 WORKDIR /usr/local/share
+RUN ls
+RUN pwd
 RUN tar zxf webmin-1.850.tar.gz
 RUN /usr/local/share/webmin-1.850/setup.sh /usr/local/webmin
 
