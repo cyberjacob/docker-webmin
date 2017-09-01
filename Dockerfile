@@ -5,10 +5,10 @@ LABEL maintainer="cyberjacob@gmail.com"
 EXPOSE 443
 VOLUME /data
 
-ADD webmin-1.850.tar.gz /tmp/webmin-1.850.tar.gz
+ADD webmin-1.850.tar.gz /tmp
 
 ENV config_dir /data
-ENV var_dir    /var/webmin.
+ENV var_dir    /var/webmin
 ENV perl       /usr/bin/perl
 ENV port       443
 ENV login      admin
