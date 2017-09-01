@@ -17,7 +17,9 @@ ENV ssl        1
 ENV atboot     0
 
 RUN apk update && apk add perl tar && rm -r /var/cache/
-RUN cd /usr/local/share/ && tar zxf webmin-1.850.tar.gz && cd webmin-1.850 && ./setup.sh /usr/local/webmin
+WORKDIR /usr/local/share
+RUN tar zxf webmin-1.850.tar.gz
+RUN /usr/local/share/webmin-1.850/setup.sh /usr/local/webmin
 
 # TODO: Startup script to copy default config
 ENTRYPOINT /usr/local/webmin/miniserv.pl /data/miniserv.conf
