@@ -16,7 +16,7 @@ ENV password   admin
 ENV ssl        1
 ENV atboot     0
 
-RUN apk update && apk add perl && rm -r /var/cache/
+RUN apk update && apk add perl tar && rm -r /var/cache/
 RUN cd /tmp && tar zxf webmin-1.850.tar.gz && cd webmin-1.850 && ./setup.sh /usr/local/webmin
 
 # TODO: Startup script to copy default config
